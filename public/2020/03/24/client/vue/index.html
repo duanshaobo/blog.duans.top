@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>vue | web前端面试题集锦</title>
+  <meta name="keywords" content=" vue ">
+  <meta name="description" content="vue | web前端面试题集锦">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mongodb">
+<meta property="og:url" content="http://blog.duans.top/2020/03/24/server/mongodb/index.html">
+<meta property="og:site_name" content="web前端面试题集锦">
+<meta property="og:locale" content="zh">
+<meta property="article:published_time" content="2020-03-24T07:46:36.000Z">
+<meta property="article:modified_time" content="2020-03-24T07:47:17.218Z">
+<meta property="article:author" content="duans">
+<meta property="article:tag" content="mongodb">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.0.1" rel="stylesheet">
+
+<link href="/css/hl_theme/sublime.css?v=1.0.1" rel="stylesheet">
+
+<link href="//cdn.bootcss.com/animate.css/3.5.2/animate.min.css" rel="stylesheet">
+<link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="//cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+<script src="/js/jquery.autocomplete.min.js?v=1.0.1" ></script>
+
+<script src="//cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.bootcss.com/nprogress/0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.0.1" ></script>
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="false">
+  <input class="theme_blog_path" value="">
+</div>
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/" class="avatar_target">
+    <img class="avatar" src="/img/avatar.jpg" />
+</a>
+<div class="author">
+    <span>duans</span>
+</div>
+
+<div class="icon">
+    
+        
+        <a title="oschina" href="https://gitee.com/duans" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-oschina"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="jianshu" href="https://www.jianshu.com/u/6345254fa137" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-jianshu"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="github" href="https://github.com/duanshaobo" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-github"></use>
+                </svg>
+            
+        </a>
+        
+    
+        
+        <a title="email" href="mailto:duanshaobo@126.com" target="_blank">
+            
+                <svg class="iconfont-svg" aria-hidden="true">
+                    <use xlink:href="#icon-email"></use>
+                </svg>
+            
+        </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li><div class="all active">全部文章<small>(14)</small></div></li>
+    
+        
+            <li><div data-rel="web前端">web前端<small>(8)</small></div></li>
+        
+    
+        
+            <li><div data-rel="web服务器">web服务器<small>(2)</small></div></li>
+        
+    
+        
+            <li><div data-rel="数据库">数据库<small>(2)</small></div></li>
+        
+    
+        
+            <li><div data-rel="web后端">web后端<small>(2)</small></div></li>
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+    
+    
+    
+    
+    </div>
+    <div></div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="14">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        友情链接
+        <i class="back-title-list"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://www.duans.top/">duans</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <form onkeydown="if(event.keyCode === 13){return false;}">
+        <input id="local-search-input" class="search" type="text" placeholder="Search..." />
+        <i class="cross"></i>
+        <span>
+            <label for="tagswitch">Tags:</label>
+            <input id="tagswitch" type="checkbox" style="display: none" />
+            <i id="tagsWitchIcon"></i>
+        </span>
+    </form>
+    <div class="tags-list">
+    
+    <li class="article-tag-list-item">
+        <a class="color4">vue</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">前端基础</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">react</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">minapp</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">javascript</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">angular</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color3">mongodb</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color5">websocket</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">jquery</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color2">apache</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">mysql</a>
+    </li>
+    
+    <li class="article-tag-list-item">
+        <a class="color1">nginx</a>
+    </li>
+    
+    <div class="clearfix"></div>
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="web后端 "
+           href="/2020/03/24/server/nodejs/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="nodejs">nodejs</span>
+            <span class="post-date" title="2020-03-24 15:40:21">2020/03/24</span>
+        </a>
+        
+        <a  class="web前端 "
+           href="/2020/03/24/client/angular/"
+           data-tag="angular"
+           data-author="" >
+            <span class="post-title" title="angular">angular</span>
+            <span class="post-date" title="2020-03-24 11:56:09">2020/03/24</span>
+        </a>
+        
+        <a  class="web前端 "
+           href="/2020/03/24/client/minapp/"
+           data-tag="minapp"
+           data-author="" >
+            <span class="post-title" title="微信小程序">微信小程序</span>
+            <span class="post-date" title="2020-03-24 11:00:34">2020/03/24</span>
+        </a>
+        
+        <a  class="web前端 "
+           href="/2020/03/24/client/jquery/"
+           data-tag="jquery"
+           data-author="" >
+            <span class="post-title" title="jquery">jquery</span>
+            <span class="post-date" title="2020-03-24 11:44:09">2020/03/24</span>
+        </a>
+        
+        <a  class="web前端 "
+           href="/2020/03/24/client/websocket/"
+           data-tag="websocket"
+           data-author="" >
+            <span class="post-title" title="Websocket">Websocket</span>
+            <span class="post-date" title="2020-03-24 13:17:01">2020/03/24</span>
+        </a>
+        
+        <a  class="web服务器 "
+           href="/2020/03/24/server/apache/"
+           data-tag="apache"
+           data-author="" >
+            <span class="post-title" title="apache">apache</span>
+            <span class="post-date" title="2020-03-24 15:43:29">2020/03/24</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/03/24/server/mongodb/"
+           data-tag="mongodb"
+           data-author="" >
+            <span class="post-title" title="mongodb">mongodb</span>
+            <span class="post-date" title="2020-03-24 15:46:36">2020/03/24</span>
+        </a>
+        
+        <a  class="数据库 "
+           href="/2020/03/24/server/mysql/"
+           data-tag="mysql"
+           data-author="" >
+            <span class="post-title" title="mysql">mysql</span>
+            <span class="post-date" title="2020-03-24 15:46:19">2020/03/24</span>
+        </a>
+        
+        <a  class="web服务器 "
+           href="/2020/03/24/server/nginx/"
+           data-tag="nginx"
+           data-author="" >
+            <span class="post-title" title="nginx">nginx</span>
+            <span class="post-date" title="2020-03-24 15:43:15">2020/03/24</span>
+        </a>
+        
+        <a  class="web后端 "
+           href="/2020/03/24/server/php/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="php">php</span>
+            <span class="post-date" title="2020-03-24 15:42:33">2020/03/24</span>
+        </a>
+        
+        <a  class="web前端 "
+           href="/2020/03/24/client/react/"
+           data-tag="react"
+           data-author="" >
+            <span class="post-title" title="react">react</span>
+            <span class="post-date" title="2020-03-24 10:58:53">2020/03/24</span>
+        </a>
+        
+        <a  class="web前端 "
+           href="/2020/03/24/client/web-base/"
+           data-tag="前端基础"
+           data-author="" >
+            <span class="post-title" title="web前端基础">web前端基础</span>
+            <span class="post-date" title="2020-03-24 10:59:46">2020/03/24</span>
+        </a>
+        
+        <a  class="web前端 "
+           href="/2020/03/24/client/javascript/"
+           data-tag="javascript"
+           data-author="" >
+            <span class="post-title" title="javascript基础">javascript基础</span>
+            <span class="post-date" title="2020-03-24 11:43:12">2020/03/24</span>
+        </a>
+        
+        <a  class="web前端 "
+           href="/2020/03/24/client/vue/"
+           data-tag="vue"
+           data-author="" >
+            <span class="post-title" title="vue">vue</span>
+            <span class="post-date" title="2020-03-24 10:59:46">2020/03/24</span>
+        </a>
+        
+    </nav>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div class="post">
+    <div class="pjax">
+        <article id="post-client/vue" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">vue</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            
+                <a  data-rel="web前端">web前端</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            
+            <a class="color4">vue</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+        创建时间:<time class="date" title='更新时间: 2020-03-24 15:49:12'>2020-03-24 10:59</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            阅读:<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vue中如何封装一个组件"><span class="toc-text">vue中如何封装一个组件</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue中computed和watch的区别"><span class="toc-text">Vue中computed和watch的区别?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#谈谈对vue中插槽的理解"><span class="toc-text">谈谈对vue中插槽的理解?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#v-show-和-v-if在隐藏一个元素的时候有什么不同-应该如何来选择"><span class="toc-text">v-show 和 v-if在隐藏一个元素的时候有什么不同, 应该如何来选择?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是Vuex-在那种场景下使用"><span class="toc-text">什么是Vuex, 在那种场景下使用?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#说说Vue路由的使用步骤"><span class="toc-text">说说Vue路由的使用步骤?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#你所了解到的常见Vue组件库有哪些"><span class="toc-text">你所了解到的常见Vue组件库有哪些?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#谈谈对于MVVM的理解"><span class="toc-text">谈谈对于MVVM的理解?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue的生命周期"><span class="toc-text">Vue的生命周期?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue实现数据双向绑定的原理"><span class="toc-text">Vue实现数据双向绑定的原理?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue创建组件的时候-data为什么要使用匿名函数return一个对象"><span class="toc-text">Vue创建组件的时候,data为什么要使用匿名函数return一个对象?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue中实现父组件向子组件传递数据"><span class="toc-text">Vue中实现父组件向子组件传递数据?</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue中如何实现子组件向父组件传递数据"><span class="toc-text">Vue中如何实现子组件向父组件传递数据?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue中实现兄弟组件间的传递数据"><span class="toc-text">Vue中实现兄弟组件间的传递数据?</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-text">vue</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-text">vue</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-text"></span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue中有几种路由模式"><span class="toc-text">Vue中有几种路由模式?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue路由导航守卫是什么-以及应用场景"><span class="toc-text">Vue路由导航守卫是什么, 以及应用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue如何自定义一个过滤器？"><span class="toc-text">Vue如何自定义一个过滤器？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue如何自定义一个vue指令？"><span class="toc-text">Vue如何自定义一个vue指令？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#怎么定义-vue-router-的动态路由-怎么获取通过路由传过来的参数"><span class="toc-text">怎么定义 vue-router 的动态路由? 怎么获取通过路由传过来的参数?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue路由模块中-route和-router的区别"><span class="toc-text">Vue路由模块中$route和$router的区别?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue中v-for指令循环遍历中key属性的作用？"><span class="toc-text">vue中v-for指令循环遍历中key属性的作用？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue和react有哪些不同的地方"><span class="toc-text">Vue和react有哪些不同的地方?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue有哪些常用的事件修饰符"><span class="toc-text">Vue有哪些常用的事件修饰符?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列举Vue中常用的指令"><span class="toc-text">列举Vue中常用的指令</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue中如何解决插值表达式闪烁问题"><span class="toc-text">Vue中如何解决插值表达式闪烁问题?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue路由中如何实现通过锚点值的改变切换组件"><span class="toc-text">Vue路由中如何实现通过锚点值的改变切换组件?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue中如何实现给样式添加作用域-说明其实现原理"><span class="toc-text">vue中如何实现给样式添加作用域?说明其实现原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue中如何动态添加一个路由规则"><span class="toc-text">Vue中如何动态添加一个路由规则?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue中有何优化页面的加载效率"><span class="toc-text">Vue中有何优化页面的加载效率?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是路由懒加载-路由懒加载有什么好处-如何实现路由懒加载"><span class="toc-text">什么是路由懒加载? 路由懒加载有什么好处? 如何实现路由懒加载?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue中如何触发一个自定义事件"><span class="toc-text">Vue中如何触发一个自定义事件?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue中如何监听自定义事件的执行"><span class="toc-text">Vue中如何监听自定义事件的执行?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue中如何移除自定义事件"><span class="toc-text">Vue中如何移除自定义事件?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vm-mount-selector-方法的作用是什么"><span class="toc-text">vm.$mount(selector)方法的作用是什么?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue中keep-alive组件的作用是什么"><span class="toc-text">Vue中keep-alive组件的作用是什么?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue中如何手动销毁一个vue实例"><span class="toc-text">Vue中如何手动销毁一个vue实例?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue中有哪些内置的组件"><span class="toc-text">Vue中有哪些内置的组件?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vue实例中有哪些属性"><span class="toc-text">vue实例中有哪些属性?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue-use-plugin-的作用是什么-使用的时候需要注意什么问题"><span class="toc-text">Vue.use(plugin)的作用是什么, 使用的时候需要注意什么问题?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vm-nextTick-fn-的作用是什么"><span class="toc-text">vm.$nextTick(fn)的作用是什么?</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#app"><span class="toc-text">vue</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#vue中的混入-mixin-有什么作用"><span class="toc-text">vue中的混入(mixin)有什么作用?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#如何开发一个vue插件"><span class="toc-text">如何开发一个vue插件?</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#"><span class="toc-text">loading…</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是ssr-如何实现ssr"><span class="toc-text">什么是ssr? 如何实现ssr?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#什么是SPA"><span class="toc-text">什么是SPA?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#使用vue-react-angular开发的SPA单页面应用有什么优缺点"><span class="toc-text">使用vue,react,angular开发的SPA单页面应用有什么优缺点?</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="vue中如何封装一个组件"><a href="#vue中如何封装一个组件" class="headerlink" title="vue中如何封装一个组件"></a>vue中如何封装一个组件</h2><p>首先定义一个后缀名为.vue的文件.文件内部还是三部分组成, template模板部分, script逻辑部分, style样式部分. 这三部分是组件的核心部分, 组件需要哪些结构, 在模板部分书写, 需要什么样的外观样式, 通过style部分书写, 有哪些行为在script部分书写.一定要在script部分使用es6模块化的导出语法(export default{}), 进行导出. 然后在需要调用组件的地方使用es6模块化导入语法导入即可, 组件需要哪些参数, 直接在调用的部分进行传递即可.主要逻辑还是在组件中完成.</p>
+<h2 id="Vue中computed和watch的区别"><a href="#Vue中computed和watch的区别" class="headerlink" title="Vue中computed和watch的区别?"></a>Vue中computed和watch的区别?</h2><p>computed是计算属性, 可以根据data中的数据成员,动态计算出一个新的数据成员(这个数据成员在data中并不存在), 计算属性的函数必须有返回值; watch是监视器, 可以监视data中某一个数据成员的改变或路由中的某些属性的改变, 可以根据这个改变, 做一些其他操作(不仅仅局限于更新其他相关数据).<br>Watch监听器:<br>var vm = new Vue({<br>el: ‘#demo’,<br>data: {<br>firstName: ‘Foo’,<br>lastName: ‘Bar’,<br>fullName: ‘Foo Bar’<br>},<br>watch: {<br>firstName: function (val) {<br>this.fullName = val + ‘ ‘ + this.lastName<br>},<br>lastName: function (val) {<br>this.fullName = this.firstName + ‘ ‘ + val<br>}<br>}<br>})<br>计算属性:<br>var vm = new Vue({<br>el: ‘#demo’,<br>data: {<br>firstName: ‘Foo’,<br>lastName: ‘Bar’<br>},<br>computed: {<br>fullName: function () {<br>return this.firstName + ‘ ‘ + this.lastName<br>}<br>}<br>})</p>
+<h2 id="谈谈对vue中插槽的理解"><a href="#谈谈对vue中插槽的理解" class="headerlink" title="谈谈对vue中插槽的理解?"></a>谈谈对vue中插槽的理解?</h2><p>Vue中的插槽分为三种, 匿名插槽, 具名插槽, 作用域插槽.<br>通过插槽可以动态指定某一个组件模板部分的渲染, 我们在调用组件的时候, 在组件的调用标签中间传递了什么样的标签结构, 那么该组件就会把我们传递的标签结构放在他的模板部分进行渲染.</p>
+<h2 id="v-show-和-v-if在隐藏一个元素的时候有什么不同-应该如何来选择"><a href="#v-show-和-v-if在隐藏一个元素的时候有什么不同-应该如何来选择" class="headerlink" title="v-show 和 v-if在隐藏一个元素的时候有什么不同, 应该如何来选择?"></a>v-show 和 v-if在隐藏一个元素的时候有什么不同, 应该如何来选择?</h2><p>v-show是通过css的方式来隐藏元素, 而v-if是根据条件是否成立决定是否要创建元素. 如果某个元素需要频繁切换显示状态的话, 建议是使用v-show, 因为频繁创建销毁DOM需要性能开销.</p>
+<h2 id="什么是Vuex-在那种场景下使用"><a href="#什么是Vuex-在那种场景下使用" class="headerlink" title="什么是Vuex, 在那种场景下使用?"></a>什么是Vuex, 在那种场景下使用?</h2><p>Vuex是针对vue的一个状态管理工具. 有几个核心的部分:<br>state存储状态数据;<br>mutations: 更新数据的方法,<br>actions: 调用mutations中的方法, 更新state数据;<br>getters: 对state中的数据进行预处理<br>当组件的关系比较复杂的时候, 可以使用vuex简化组件间的传值.</p>
+<h2 id="说说Vue路由的使用步骤"><a href="#说说Vue路由的使用步骤" class="headerlink" title="说说Vue路由的使用步骤?"></a>说说Vue路由的使用步骤?</h2><p>第一步:下载路由模块vue-router;<br>第二步:创建路由对象;<br>第三步:配置路由规则;<br>第四步:将路由对象注册为vue实例对象的成员属性</p>
+<h2 id="你所了解到的常见Vue组件库有哪些"><a href="#你所了解到的常见Vue组件库有哪些" class="headerlink" title="你所了解到的常见Vue组件库有哪些?"></a>你所了解到的常见Vue组件库有哪些?</h2><p>PC端组件库: element-ui, ant-design, iview<br>移动端: mint-ui, vant, vux</p>
+<h2 id="谈谈对于MVVM的理解"><a href="#谈谈对于MVVM的理解" class="headerlink" title="谈谈对于MVVM的理解?"></a>谈谈对于MVVM的理解?</h2><p>MVVM由三部分组成M(model数据层), V(view视图层),VM(view-model)视图模型层. 是一种框架的设计思想, vue就是基于mvvm来设计的.<br>其中M(model)层是负责初始化数据,V(view)只负责页面展示,VM(view-model)用来连接view层和model层, 将数据层的数据传递一个视图层进行展示, 将视图层的操作传递到数据层进行持久化.</p>
+<h2 id="Vue的生命周期"><a href="#Vue的生命周期" class="headerlink" title="Vue的生命周期?"></a>Vue的生命周期?</h2><p>创建阶段: 只执行一次<br>beforeCreate(开始进行一些数据和方法的初始化的操作, data中的数据和methods中的方法还不能用),<br> created(已经完成数据和方法的初始化, data中的数据和methods中的方法可以使用了),<br> beforeMount(开始渲染虚拟DOM),<br>mounted(已经完成了虚拟DOM 的渲染, 可以操作DOM 了, 只执行一次)<br>运行阶段: 执行多次<br>beforeUpdate(data中的数据即将被更新, 会执行多次)<br>updated(data中的数据已经更新完毕, 会执行多次)<br>销毁阶段: 只执行一次<br>beforeDestroy(vue实例即将销毁, 此时data中的数据和methods中的方法依然处于可用状态)<br>destroyed(vue实例已经销毁, 此时data中的数据和methods中的方法已经不可用)</p>
+<h2 id="Vue实现数据双向绑定的原理"><a href="#Vue实现数据双向绑定的原理" class="headerlink" title="Vue实现数据双向绑定的原理?"></a>Vue实现数据双向绑定的原理?</h2><p>Vue是使用数据劫持, 结合发布者订阅者模式实现双向数据绑定的</p>
+<p>// 初始值<br>var data = {<br>msg: ‘hello’,<br>title: ‘标题’<br>}<br>for (var key in data) {<br>Object.defineProperty(window, key, {<br>get: function () {<br>// console.log(‘get被触发了’);<br>return data[key];<br>},<br>set: function (input) {<br>// do something: 如通知界面层更新<br>console.log(input, ‘假装在通知界面’);<br>}<br>});<br>}<br>title = ‘title初始值’;<br>console.log(title);</p>
+<p>执行过程分析:<br>读取title或者msg的时候get方法会自动触发; 重新给title或msg赋值的时候,set方法会被自动触发(可以在此处通知界面层更新)</p>
+<h2 id="Vue创建组件的时候-data为什么要使用匿名函数return一个对象"><a href="#Vue创建组件的时候-data为什么要使用匿名函数return一个对象" class="headerlink" title="Vue创建组件的时候,data为什么要使用匿名函数return一个对象?"></a>Vue创建组件的时候,data为什么要使用匿名函数return一个对象?</h2><p>因为对象是一种引用数据类型,在内存中只有一份. 如果data的值直接是一个对象的话, 那么后期组件在不同的地方多次调用的时候, 会相互产生影响, 因为每一次调用操作的data对象是一样的. 使用函数的方式返回对象, 可以保证组件的每一次调用都会创建一个新对象, 这样组件的每一次调用不会相互产生影响.</p>
+<h2 id="Vue中实现父组件向子组件传递数据"><a href="#Vue中实现父组件向子组件传递数据" class="headerlink" title="Vue中实现父组件向子组件传递数据?"></a>Vue中实现父组件向子组件传递数据?</h2><p>第一步: 在子组件的调用标签上声明一个自定义属性, 属性值来自父组件的data<br>第二步: 在子组件的定义部分声明一个属性props, 值是一个数组, 将自定义属性的名字在props中进行声明; 在子组件的模板部分可以使用props中声明过的数据.</p>
+<p>// 父组件<br>Vue.component(‘parent’,{<br>template:`</p>
+<div> 
+<child :msgFromParent="msg"></child> 
+<div>`,
+data:function(){
+return {
+title:'父组件的标题',
+msg:'这是传给子组件的值'
+}
+},
+// 子组件
+components:{
+child:{
+// 模板
+template:`
+<div>
+<h1></h1> 
+</div>`,
+// 数据模型
+data:function(){
+return {
+title:'子组件标题'
+}
+},
+//获取父组件中传过来的值
+props:['msgFromParent']
+}
+}
+});
+
+
+<h2 id="Vue中如何实现子组件向父组件传递数据"><a href="#Vue中如何实现子组件向父组件传递数据" class="headerlink" title="Vue中如何实现子组件向父组件传递数据?"></a>Vue中如何实现子组件向父组件传递数据?</h2><p>第一步: 在子组件的调用标签只上通过v-on动态绑定一个自定义事件, 自定义事件的处理函数必须在父组件的methods中提前声明, 这个函数需要一个形参, 来接收子组件传递过来的数据.<br>第二步: 在子组件中通过this.$emit(自定义事件,数据)触发自定义事件的执行, 此动作可以放在子组件的created/mounted生命周期中, 可以放在某个事件处理函数中.</p>
+<h2 id="Vue中实现兄弟组件间的传递数据"><a href="#Vue中实现兄弟组件间的传递数据" class="headerlink" title="Vue中实现兄弟组件间的传递数据?"></a>Vue中实现兄弟组件间的传递数据?</h2><p>第一步: 声明一个空的Vue实例对象comm, 作为事件中心的角色<br>第二步: 在acom组件中通过comm.$emit(自定义事件,数据)的方式触发事件(此操作可放在某个事件处理函数或者acom组件的生命周期函数created/mounted中)<br>第三步: 在bcom组件中通过comm.$on(自定义事件,function(data){})监听自定义事件的执行(操作可放在bcom组件的声明周期函数created/mounted中)</p>
+<p>// 公共组件<br>var comm=new Vue();<br>// 兄弟组件1</p>
+<p>Vue.component(‘coma’,{<br>template:`</p>
+<div>
+<h1>vue</h1>
+<button @click="sendMsg">发送</button>
+</div>
+`,
+data:function(){
+return {
+title:'组件A',
+msg:'传给兄弟组件的值'
+}
+},
+methods:{
+sendMsg:function(){
+comm.$emit('myevent',this.msg)
+}
+},
+created:function(){
+// 注册自定义事件
+comm.$emit('myevent',this.msg);
+console.log('注册事件OK');
+}
+});
+// 兄弟组件2
+Vue.component('comb',{
+template:`
+<div>
+<h1>vue</h1>
+<h1></h1>
+</div>
+`,
+data:function(){
+return {
+title:'组件B',
+msg:''
+}
+},
+mounted:function(){
+comm.$on('myevent',(data)=>{
+this.msg=data 
+console.log(data);
+});
+}
+});
+
+
+<h2 id="Vue中有几种路由模式"><a href="#Vue中有几种路由模式" class="headerlink" title="Vue中有几种路由模式?"></a>Vue中有几种路由模式?</h2><p>Vue中的路由模式有两种:hash,history; 默认是hash模式; 可以在创建路由对象的时候, 使用mode属性来切换路由模式.<br>const router=new Router({mode:’history’})</p>
+<h2 id="Vue路由导航守卫是什么-以及应用场景"><a href="#Vue路由导航守卫是什么-以及应用场景" class="headerlink" title="Vue路由导航守卫是什么, 以及应用场景"></a>Vue路由导航守卫是什么, 以及应用场景</h2><p>路由守卫是在页面进行路由跳转的时候做一些处理, 比如拦截.<br>vue-router中提供了下面几种路由导航守卫:<br>全局前置守卫</p>
+<p>const router = new VueRouter({ … })</p>
+<p>router.beforeEach((to, from, next) =&gt; {<br>// from从里来<br>// to到哪里去<br>// next是否要放行<br>})</p>
+<p>全局后置钩子</p>
+<p>router.afterEach((to, from) =&gt; {<br>// …<br>})</p>
+<p>路由独享守卫: 在声明路由的时候, 针对特定路由的钩子函数</p>
+<p>const router = new VueRouter({<br>routes: [<br>{<br>path: ‘/foo’,<br>component: Foo,<br>beforeEnter: (to, from, next) =&gt; {<br>// …<br>}<br>}<br>]<br>})</p>
+<h2 id="Vue如何自定义一个过滤器？"><a href="#Vue如何自定义一个过滤器？" class="headerlink" title="Vue如何自定义一个过滤器？"></a>Vue如何自定义一个过滤器？</h2><p>定义全局过滤器:<br>Vue.filter(‘过虑器名称’,function(input){ return input });<br>定义局部过滤器:</p>
+<p>new Vue({<br>filters:{<br>dateFmt:function(input){<br>return ‘yyyy-mm-dd’;<br>}<br>}<br>})</p>
+<h2 id="Vue如何自定义一个vue指令？"><a href="#Vue如何自定义一个vue指令？" class="headerlink" title="Vue如何自定义一个vue指令？"></a>Vue如何自定义一个vue指令？</h2><p>定义全局指令:<br>Vue.directive(‘指令名’,function(el,binding){});<br>定义私有指令:<br>new Vue({<br>directives:{<br>focus:function(el,binding){<br>}<br>}<br>});</p>
+<h2 id="怎么定义-vue-router-的动态路由-怎么获取通过路由传过来的参数"><a href="#怎么定义-vue-router-的动态路由-怎么获取通过路由传过来的参数" class="headerlink" title="怎么定义 vue-router 的动态路由? 怎么获取通过路由传过来的参数?"></a>怎么定义 vue-router 的动态路由? 怎么获取通过路由传过来的参数?</h2><p>const router=new VueRouter({<br>routes:[<br>{path:’/product/:id’,component:Product}<br>]<br>});<br>// 获取参数:<br>this.$route.params.id</p>
+<h2 id="Vue路由模块中-route和-router的区别"><a href="#Vue路由模块中-route和-router的区别" class="headerlink" title="Vue路由模块中$route和$router的区别?"></a>Vue路由模块中$route和$router的区别?</h2><p>$route中存储的是跟路由相关的属性(如$route.params,$route.query) ;  $router中存储的是和路由相关的方法(如$router.push(),$router.go()), </p>
+<h2 id="vue中v-for指令循环遍历中key属性的作用？"><a href="#vue中v-for指令循环遍历中key属性的作用？" class="headerlink" title="vue中v-for指令循环遍历中key属性的作用？"></a>vue中v-for指令循环遍历中key属性的作用？</h2><p>Key属性的作用是在数据层和视图层之间建立一一对应关系, 方便后期对页面进行局部更新. 如果某一条数据发生改变, 只更新当前数据对应的DOM元素.</p>
+<h2 id="Vue和react有哪些不同的地方"><a href="#Vue和react有哪些不同的地方" class="headerlink" title="Vue和react有哪些不同的地方?"></a>Vue和react有哪些不同的地方?</h2><p>Vue实现了双向数据绑定(数据&lt;=&gt;界面);react仅仅实现了单项数据流(数据层=&gt;界面层); vue中提供了指令, react中没有指令的概念. vue中使用插值表达式在进行数据渲染, react中使用jsx进行数据的渲染.</p>
+<h2 id="Vue有哪些常用的事件修饰符"><a href="#Vue有哪些常用的事件修饰符" class="headerlink" title="Vue有哪些常用的事件修饰符?"></a>Vue有哪些常用的事件修饰符?</h2><p>.prevent: 阻止默认事件;<br>.stop: 阻止冒泡;<br>.once: 事件执行一次;<br>.self: 只当在 event.target 是当前元素自身时触发处理函数</p>
+<h2 id="列举Vue中常用的指令"><a href="#列举Vue中常用的指令" class="headerlink" title="列举Vue中常用的指令"></a>列举Vue中常用的指令</h2><p>v-model:实现双向数据绑定;<br>v-bind: 绑定属性;<br>v-on:注册事件;<br>v-html: 设置标签内容(允许内容html)<br>v-text: 设置标签的内容(不允许包含html)<br>v-clack: 解决插值表达式闪烁问题<br>V-for: 循环遍历数组或对象</p>
+<h2 id="Vue中如何解决插值表达式闪烁问题"><a href="#Vue中如何解决插值表达式闪烁问题" class="headerlink" title="Vue中如何解决插值表达式闪烁问题?"></a>Vue中如何解决插值表达式闪烁问题?</h2><p>使用v-html或v-text替代插值表达式;<br>使用v-clack解决插值表达式闪烁,<br>第一步:声明属性选择器[v-clack]{display:none}<br>第二步:在插值表达式所在标签添加属性v-clack</p>
+<h2 id="Vue路由中如何实现通过锚点值的改变切换组件"><a href="#Vue路由中如何实现通过锚点值的改变切换组件" class="headerlink" title="Vue路由中如何实现通过锚点值的改变切换组件?"></a>Vue路由中如何实现通过锚点值的改变切换组件?</h2><p>通过监听hashchange事件, 具体如下:</p>
+<p>window.addEventListener(‘hashchange’,function(){<br>console.log(‘hash change’);<br>});</p>
+<h2 id="vue中如何实现给样式添加作用域-说明其实现原理"><a href="#vue中如何实现给样式添加作用域-说明其实现原理" class="headerlink" title="vue中如何实现给样式添加作用域?说明其实现原理"></a>vue中如何实现给样式添加作用域?说明其实现原理</h2><p>vue中要给样式添加作用域, 只需要给style标签添加scoped属性即可.<br>实现原理:<br>添加了scoped属性的style标签内的样式会被改写成一个交集选择器, 会在原来类名的基础上添加一个随机属性(如.container[v-abcde]), 同时引用该类名的标签也会添加一个相同的属性(如<div class=”container”  v-abcde></div>) , 这样的话, 这个类名就可以对引用它的标签生效, 同时不会影响其他同类名的标签.</p>
+<h2 id="Vue中如何动态添加一个路由规则"><a href="#Vue中如何动态添加一个路由规则" class="headerlink" title="Vue中如何动态添加一个路由规则?"></a>Vue中如何动态添加一个路由规则?</h2><p>使用router.addRoutes([{path:’’,component:’’}])</p>
+<h2 id="Vue中有何优化页面的加载效率"><a href="#Vue中有何优化页面的加载效率" class="headerlink" title="Vue中有何优化页面的加载效率?"></a>Vue中有何优化页面的加载效率?</h2><p>使用路由懒加载和组件懒加载;<br>不要打包一些公共的依赖(vue, 组件库);<br>使用CDN加载这些依赖文件</p>
+<h2 id="什么是路由懒加载-路由懒加载有什么好处-如何实现路由懒加载"><a href="#什么是路由懒加载-路由懒加载有什么好处-如何实现路由懒加载" class="headerlink" title="什么是路由懒加载? 路由懒加载有什么好处? 如何实现路由懒加载?"></a>什么是路由懒加载? 路由懒加载有什么好处? 如何实现路由懒加载?</h2><p>路由懒加载是指通过异步的方式来加载对应的路由组件(默认情况是将所有的组件全部加载并打包).<br>路由懒加载的好处: 可以提高页面的加载速度, 尤其是首页的加载速度(因为使用了懒加载后, 加载首页的时候, 就不需要加载其他页面对应的组件, 在需要的时候再加载)<br>具体实现:</p>
+<p>import Vue from ‘vue’;<br>import Router from ‘vue-router’;<br>// 异步导入组件<br>// 异步加载方式一<br>const List = resolve =&gt; require([‘@/components/list’], resolve);<br>// 异步加载方式二<br>const Detail = () =&gt; import(/* webpackChunkName: “group-master” */ ‘@/components/detail’)</p>
+<p>Vue.use(Router);<br>export default new Router({<br>// 路由规则<br>routes:[<br>{path:’/list’,component:List},<br>{path:’/detail’,component:Detail}<br>],<br>// 路由模式: 默认hash, 可选值hash(如#/index)|history(/index)<br>mode:’history’<br>});</p>
+<h2 id="Vue中如何触发一个自定义事件"><a href="#Vue中如何触发一个自定义事件" class="headerlink" title="Vue中如何触发一个自定义事件?"></a>Vue中如何触发一个自定义事件?</h2><p>通过this.$emit(event, ’数据’) 可以触发自定义事件的执行.</p>
+<h2 id="Vue中如何监听自定义事件的执行"><a href="#Vue中如何监听自定义事件的执行" class="headerlink" title="Vue中如何监听自定义事件的执行?"></a>Vue中如何监听自定义事件的执行?</h2><p>通过this.$on(event,callback)可以监听自定义事件的执行</p>
+<h2 id="Vue中如何移除自定义事件"><a href="#Vue中如何移除自定义事件" class="headerlink" title="Vue中如何移除自定义事件?"></a>Vue中如何移除自定义事件?</h2><p>通过this.$off(event,callback)可以移除一个自定义事件; 如果某些特殊场景下,一个事件被触发一次后就需要将其移除, 可以使用this.$once(event,callback)进行事件注册</p>
+<h2 id="vm-mount-selector-方法的作用是什么"><a href="#vm-mount-selector-方法的作用是什么" class="headerlink" title="vm.$mount(selector)方法的作用是什么?"></a>vm.$mount(selector)方法的作用是什么?</h2><p>手动将一个vue实例挂载到页面上</p>
+<p>var MyComponent = Vue.extend({<br>template: ‘<div>Hello!</div>‘<br>})<br>// 创建并挂载到 #app (会替换 #app)<br>new MyComponent().$mount(‘#app’)<br>// 同上<br>new MyComponent({ el: ‘#app’ })</p>
+<h2 id="Vue中keep-alive组件的作用是什么"><a href="#Vue中keep-alive组件的作用是什么" class="headerlink" title="Vue中keep-alive组件的作用是什么?"></a>Vue中keep-alive组件的作用是什么?</h2><p>keep-alive可以将被包裹的组件暂存在内存当中, 当页面切换的时候, 组件不会被重复的销毁和创建, 从而可以提高整体性能, 同时也可以保存组件的一些状态. </p>
+<h2 id="Vue中如何手动销毁一个vue实例"><a href="#Vue中如何手动销毁一个vue实例" class="headerlink" title="Vue中如何手动销毁一个vue实例?"></a>Vue中如何手动销毁一个vue实例?</h2><p>调用vm.$destroy()可销毁一个vue实例(清理它与其它实例的连接，解绑它的全部指令及事件监听器)</p>
+<h2 id="Vue中有哪些内置的组件"><a href="#Vue中有哪些内置的组件" class="headerlink" title="Vue中有哪些内置的组件?"></a>Vue中有哪些内置的组件?</h2><p>component, slot, transition, transition-group, keep-alive</p>
+<!-- 动态组件由 vm 实例的属性值 `componentId` 控制 -->
+<p><component :is="componentId"></component></p>
+<!--tansition动画组件的使用-->
+<transition>
+<div v-if="ok">toggled content</div>
+</transition>
+
+
+<h2 id="vue实例中有哪些属性"><a href="#vue实例中有哪些属性" class="headerlink" title="vue实例中有哪些属性?"></a>vue实例中有哪些属性?</h2><p>vm.$data可以获取vm实例对象data中的数据;<br>vm.$props可以获取vm组件接收到的 props 对象数据;<br>vm.$el可以获取vm实例对象的根dom元素;</p>
+<p>var MyComponent = Vue.extend({<br>template: ‘<div>Hello!</div>‘<br>})<br>// 在文档之外渲染并且随后挂载<br>var vm = new MyComponent().$mount()<br>document.getElementById(‘app’).appendChild(vm.$el)</p>
+<p>vm.$refs可以获取vm实例中注册过 ref 特性的所有dom元素和组件实例.</p>
+<h2 id="Vue-use-plugin-的作用是什么-使用的时候需要注意什么问题"><a href="#Vue-use-plugin-的作用是什么-使用的时候需要注意什么问题" class="headerlink" title="Vue.use(plugin)的作用是什么, 使用的时候需要注意什么问题?"></a>Vue.use(plugin)的作用是什么, 使用的时候需要注意什么问题?</h2><p>Vue.use的作用是安装一个Vue插件, 该方法需要在调用 new Vue() 之前被调用.</p>
+<h2 id="vm-nextTick-fn-的作用是什么"><a href="#vm-nextTick-fn-的作用是什么" class="headerlink" title="vm.$nextTick(fn)的作用是什么?"></a>vm.$nextTick(fn)的作用是什么?</h2><p>延迟某个操作的执行, 直到dom更新以后在执行.</p>
+<body>
+<div id="app"><h1 ref="h1">vue</h1></div>
+</body>
+<script>
+var vm = new Vue({
+el: '#app',
+data: {
+title: '这是一个标题'
+}
+created: function () {
+this.$nextTick(() => {
+             // 在created里直接操作ref会报错
+this.$refs.hinnerHTML = '这是更新以后的标题';
+});
+}
+});
+</script>
+
+
+<h2 id="vue中的混入-mixin-有什么作用"><a href="#vue中的混入-mixin-有什么作用" class="headerlink" title="vue中的混入(mixin)有什么作用?"></a>vue中的混入(mixin)有什么作用?</h2><p>混入 (mixin) 提供了一种非常灵活的方式，来分发 Vue 组件中的可复用功能。一个混入对象可以包含任意组件选项。当组件使用混入对象时，所有混入对象的选项将被“混合”进入该组件本身的选项。<br>当组件和混入对象含有同名选项时，这些选项将以恰当的方式进行“合并”。比如，数据对象在内部会进行递归合并，并在发生冲突时以组件数据优先。同名钩子函数将合并为一个数组，因此都将被调用。另外，混入对象的钩子将在组件自身钩子之前调用。</p>
+<h2 id="如何开发一个vue插件"><a href="#如何开发一个vue插件" class="headerlink" title="如何开发一个vue插件?"></a>如何开发一个vue插件?</h2><p>Vue.js 的插件应该暴露一个 install 方法。这个方法的第一个参数是 Vue 构造器，第二个参数是一个可选的选项对象</p>
+<p>// 定义插件<br>const myPlugin={<br>    install:(Vue,options)=&gt;{<br>         //  添加全局方法或属性<br>        Vue.myGlobalMethod = function () {<br>            // 逻辑…<br>        }<br>        //  添加全局指令<br>        Vue.directive(‘my-directive’, {<br>            bind (el, binding, vnode, oldVnode) {<br>            // 逻辑…<br>            }<br>        })<br>        //  添加实例方法<br>        Vue.prototype.$myMethod = function (methodOptions) {<br>            // 逻辑…<br>        }<br>        //  注入组件选项(混入)<br>        Vue.mixin({<br>            created: function () {<br>            // 逻辑…<br>            }<br>        })<br>        //  注册全局组件<br>        Vue.component(‘myCompent’,{<br>            template:’<h1>loading…</h1>‘<br>        });</p>
+<pre><code>}</code></pre><p>}<br>export default myPlugin;<br>// 调用插件<br>Vue.use(myPlugin,{})</p>
+<h2 id="什么是ssr-如何实现ssr"><a href="#什么是ssr-如何实现ssr" class="headerlink" title="什么是ssr? 如何实现ssr?"></a>什么是ssr? 如何实现ssr?</h2><p>ssr是全拼(server side rendering) ,中文意思, 服务端渲染, 让页面的渲染在服务端完成, 生产环境必须部署nodeJS的环境, 因为服务端渲染必须借助nodeJS来完成. vue中可以使用nuxt框架实现服务端渲染.</p>
+<h2 id="什么是SPA"><a href="#什么是SPA" class="headerlink" title="什么是SPA?"></a>什么是SPA?</h2><p>SPA(Single Page Application), 单页面应用程序, 使用vue, react, angular创建的项目都属于SPA. 因为整个项目只有一个页面, 其他页面都是在该页面的基础上局部刷新而来的.<br>传统方式创建的项目都是MPA(Mutilple Page Application)多页面应用程序.</p>
+<h2 id="使用vue-react-angular开发的SPA单页面应用有什么优缺点"><a href="#使用vue-react-angular开发的SPA单页面应用有什么优缺点" class="headerlink" title="使用vue,react,angular开发的SPA单页面应用有什么优缺点?"></a>使用vue,react,angular开发的SPA单页面应用有什么优缺点?</h2><p>单页面应用虽然性能方面得到了提升, 但是有一个致命的缺点就是不利于seo, 搜索引擎几乎不会抓取单页面应用.</p>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 在盒子里睡着的美梦, 一打开就无影无踪 </span>
+    </div>
+</article>
+
+
+
+<div class="article_copyright">
+    <p><span class="copy-title">文章标题:</span>vue</p>
+    
+    <p><span class="copy-title">本文作者:</span><a  title="duans">duans</a></p>
+    <p><span class="copy-title">发布时间:</span>2020-03-24, 10:59:46</p>
+    <p><span class="copy-title">最后更新:</span>2020-03-24, 15:49:12</p>
+    <span class="copy-title">原始链接:</span><a class="post-url" href="/2020/03/24/client/vue/" title="vue">http://blog.duans.top/2020/03/24/client/vue/</a>
+    <p>
+        <span class="copy-title">版权声明:</span><i class="fa fa-creative-commons"></i> <a rel="license noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="CC BY-NC-SA 4.0 International" target = "_blank">"署名-非商用-相同方式共享 4.0"</a> 转载请保留原文链接及作者。
+    </p>
+</div>
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">Copyright©2020 www.duans.top</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full"><span class="min "></span></button>
+<button class="post-toc-menu"><span class="post-toc-menu-icons"></span></button>
+<div class="post-toc"><span class="post-toc-title">目录</span>
+    <div class="post-toc-content">
+
+    </div>
+</div>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+<div class="acParent"></div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.0.1" ></script>
+
+<script src="/js/script.js?v=1.0.1" ></script>
+<script>
+    var img_resize = 'default';
+    /*作者、标签的自动补全*/
+    $(function () {
+        $('.search').AutoComplete({
+            'data': ['@duans','@duans','#vue','#前端基础','#react','#minapp','#javascript','#angular','#mongodb','#websocket','#jquery','#apache','#mysql','#nginx',],
+            'itemHeight': 20,
+            'width': 418
+        }).AutoComplete('show');
+    })
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $(".post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 582px;
+    }
+    .nav.fullscreen {
+        margin-left: -582px;
+    }
+    .nav-left {
+        width: 160px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 532px;
+        }
+        .nav.fullscreen {
+            margin-left: -532px;
+        }
+        .nav-left {
+            width: 140px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 532px;
+            margin-left: -532px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+        .nav .hide-list.fullscreen {
+            left: 532px
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+    .post .pjax article .article-entry>ol, .post .pjax article .article-entry>ul, .post .pjax article>ol, .post .pjax article>ul{
+        border: #e2dede solid 1px;
+        border-radius: 10px;
+        padding: 10px 32px 10px 56px;
+    }
+    .post .pjax article .article-entry li>ol, .post .pjax article .article-entry li>ul,.post .pjax article li>ol, .post .pjax article li>ul{
+        padding-top: 5px;
+        padding-bottom: 5px;
+    }
+    .post .pjax article .article-entry>ol>li, .post .pjax article .article-entry>ul>li,.post .pjax article>ol>li, .post .pjax article>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    .post .pjax article .article-entry li>ol>li, .post .pjax article .article-entry li>ul>li,.post .pjax article li>ol>li, .post .pjax article li>ul>li{
+        margin-bottom: auto;
+        margin-left: auto;
+    }
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+    .nav-right:before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0.4;
+        background: url("/img/article-list-background-1.png");
+        background-repeat: no-repeat;
+        background-position: 50% 0;
+        -ms-background-size: cover;
+        -o-background-size: cover;
+        -moz-background-size: cover;
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+    
+
+    
+    .post .pjax article :not(pre) > code {
+        color: #24292e;
+        font-family: SFMono-Regular,Consolas,Liberation Mono,Menlo,Courier,monospace;
+        background-color: rgba(27,31,35,.05);
+        border-radius: 3px;
+        font-size: 85%;
+        margin: 0;
+        padding: .2em .4em;
+    }
+    
+</style>
+
+
+
+
+
+
+
+</html>
