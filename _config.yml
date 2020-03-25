@@ -98,4 +98,13 @@ theme: 3-hexo
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type: ''
+  type: sftp
+  host: 106.13.182.88
+  user: root
+  pass: duan0823$
+  remotePath: /home/wwwroot/blog.duans.top 
+  port: 22
+  #privateKey: [path/to/privateKey]
+  #passphrase: [passphrase]
+  #agent: [path/to/agent/socket]
+
